@@ -6,12 +6,12 @@ on:
 jobs:
   check-xcode-app-file:
     runs-on: macos-14
-    defaults:
-      run:
-        working-directory: ./images/macos/scripts/build
+    #defaults:
+      #run:
+        #working-directory: ./images/macos/scripts/build
 
     steps:
       - name: Make the script files executable
-        run: chmod +x configure-xcode.sh
+        run: chmod +x /images/macos/scripts/build/configure-xcode.sh
       - name: Run Shell script
-        run: ./configure-xcode.sh
+        run: bash /images/macos/scripts/build/configure-xcode.sh
