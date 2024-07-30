@@ -1,0 +1,17 @@
+name: Run PowerShell Script
+
+on: 
+  push:
+    branches:
+      - issue-10309
+
+jobs:
+  run-powershell:
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Run PowerShell script
+        run: pwsh ./Install-Xcode.ps1
