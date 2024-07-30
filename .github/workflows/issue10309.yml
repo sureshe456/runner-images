@@ -1,7 +1,7 @@
 name: Checking Xcode.app
 
 on: 
-  workflow_dispatch:
+  push
   
 jobs:
   check-xcode-app-file:
