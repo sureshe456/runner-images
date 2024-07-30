@@ -14,4 +14,4 @@ jobs:
       #- name: Make the script files executable
         #run: chmod +x ./configure-xcode.sh
       - name: Run Shell script
-        run: ./configure-xcode.sh
+        run: bash /configure-xcode.sh
