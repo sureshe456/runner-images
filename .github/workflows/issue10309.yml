@@ -9,4 +9,5 @@ jobs:
 
     steps:
       - name: Run PowerShell script
-        run: sh ./images/macos/scripts/build/configure-xcode.sh
+        #run: sh ./images/macos/scripts/build/configure-xcode.sh
+        run: /bin/bash /images/macos/scripts/build/configure-xcode.sh
