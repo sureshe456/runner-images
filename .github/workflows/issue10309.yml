@@ -6,8 +6,10 @@ on:
 jobs:
   check-xcode-app-file:
     runs-on: macos-14
+    defaults:
+      run:
+        working-directory: ./images/macos/scripts/build
 
     steps:
       - name: Run PowerShell script
-        #run: sh ./images/macos/scripts/build/configure-xcode.sh
-        run: /bin/bash /images/macos/scripts/build/configure-xcode.sh
+        run: ./configure-xcode.sh
