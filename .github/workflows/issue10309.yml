@@ -12,6 +12,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
-
+        
+      - name: Assign permission
+        run: chmod +x ./configure-xcode.sh
+        
       - name: Run Shell script
         run: ./configure-xcode.sh
