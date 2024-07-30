@@ -1,17 +1,17 @@
 name: Checking Xcode.app
 
 on: 
-  push
-  
+  push:
+    branches:
+      - issue-10309
+
 jobs:
-  check-xcode-app-file:
+  run-shell-script:
     runs-on: macos-14
-    #defaults:
-      #run:
-        #working-directory: ./images/macos/scripts/build
 
     steps:
-      #- name: Make the script files executable
-        #run: chmod +x ./configure-xcode.sh
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Run Shell script
-        run: bash /configure-xcode.sh
+        run: ./configure-xcode.sh
