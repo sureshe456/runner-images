@@ -11,5 +11,7 @@ jobs:
         working-directory: ./images/macos/scripts/build
 
     steps:
-      - name: Run PowerShell script
+      - name: Make the script files executable
+        run: chmod +x configure-xcode.sh
+      - name: Run Shell script
         run: ./configure-xcode.sh
