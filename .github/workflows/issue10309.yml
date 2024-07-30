@@ -1,0 +1,12 @@
+name: Checking Xcode.app
+
+on: 
+  workflow_dispatch:
+  
+jobs:
+  check-xcode-app-file:
+    runs-on: macos-14
+
+    steps:
+      - name: Run PowerShell script
+        run: sh ./images/macos/scripts/build/configure-xcode.sh
