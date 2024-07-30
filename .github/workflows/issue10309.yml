@@ -11,7 +11,7 @@ jobs:
         #working-directory: ./images/macos/scripts/build
 
     steps:
-      - name: Make the script files executable
-        run: chmod +x ./configure-xcode.sh
+      #- name: Make the script files executable
+        #run: chmod +x ./configure-xcode.sh
       - name: Run Shell script
         run: ./configure-xcode.sh
