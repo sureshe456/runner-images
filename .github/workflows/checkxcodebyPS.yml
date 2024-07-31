@@ -14,4 +14,4 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Run PowerShell script
-        run: pwsh ./Install-Xcode.ps1
+        run: pwsh ./images/macos/scripts/build/Install-Xcode.ps1
