@@ -19,9 +19,12 @@ jobs:
         xcode-version: ${{ matrix.xcode }}
     - name: Install iOS platform
       run: |
-        #sudo xcodebuild -downloadPlatform iOS -version 18.2
-        xcodebuild -downloadPlatform iOS -buildVersion 18.2 -exportPath ./SimulatorRuntimes/
+        xcodebuild -downloadPlatform iOS -buildVersion 18.2
     - name: Check iOS platform
       shell: powershell
       run: |
         xcrun simctl list -j devices | ConvertFrom-Json
+
+    - name: list of simulators
+      run: |
+        xcrun simctl list devices 
