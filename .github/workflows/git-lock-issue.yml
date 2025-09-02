@@ -1,0 +1,27 @@
+name: Git Lock Issue
+
+on:
+  workflow_dispatch:
+
+jobs:
+  GitLockIssue:
+    #runs-on: macos-15
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [macos-latest]
+        
+    runs-on: ${{ matrix.os }}
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Simulate leftover .lock file
+        run: |
+          mkdir -p .git/refs/remotes/origin
+          touch .git/refs/remotes/origin/main.lock
+          echo "Created fake lock file to simulate conflict"
+
+      - name: Try to fetch origin
+        run: |
+          git fetch --force --tags --prune --prune-tags --progress --no-recurse-submodules origin
